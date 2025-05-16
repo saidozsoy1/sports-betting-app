@@ -18,12 +18,13 @@ final class MainCoordinator {
 
     func start() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyboard.instantiateInitialViewController() as? MainViewController else {
+        
+        if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
+            let viewModel: MainViewModelProtocol = MainViewModel(dataManager: dataManager)
+            mainViewController.viewModel = viewModel
+            navigationController.setViewControllers([mainViewController], animated: true)
+        } else {
             fatalError("Could not instantiate MainViewController from storyboard")
         }
-        
-        let viewModel: MainViewModelProtocol = MainViewModel(dataManager: dataManager)
-        viewController.viewModel = viewModel
-        navigationController.setViewControllers([viewController], animated: true)
     }
 }

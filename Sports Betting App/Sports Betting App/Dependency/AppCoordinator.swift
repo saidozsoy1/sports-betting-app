@@ -10,12 +10,12 @@ import UIKit
 final class AppCoordinator {
     private let window: UIWindow
     private let navigationController: UINavigationController
-    private let dependencyContainer: AppDependencyContainer
+    private let dependencyContainer: DependencyContainer
 
     private var splashCoordinator: SplashCoordinator?
     private var mainCoordinator: MainCoordinator?
 
-    init(window: UIWindow, dependencyContainer: AppDependencyContainer) {
+    init(window: UIWindow, dependencyContainer: DependencyContainer) {
         self.window = window
         self.navigationController = UINavigationController()
         self.dependencyContainer = dependencyContainer

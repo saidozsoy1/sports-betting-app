@@ -9,12 +9,12 @@ import UIKit
 
 final class SplashCoordinator {
     private let navigationController: UINavigationController
-    private let dependencyContainer: AppDependencyContainer
+    private let dependencyContainer: DependencyContainer
     private let onFinish: () -> Void
 
     init(
         navigationController: UINavigationController,
-        dependencyContainer: AppDependencyContainer,
+        dependencyContainer: DependencyContainer,
         onFinish: @escaping () -> Void
     ) {
         self.navigationController = navigationController

@@ -1,14 +1,7 @@
-//
-//  AppDependencyContainer.swift
-//  Location Based Case
-//
-//  Created by Said Ozsoy on 15.05.2025.
-//
-
 import UIKit
 
 final class DependencyContainer {
-    lazy var dataManager: DataManaging = DataManager()
+    private let dataManager: DataManaging
     
     init() {
         self.dataManager = DataManager()
@@ -17,6 +10,7 @@ final class DependencyContainer {
     func makeMainViewController() -> MainViewController {
         let viewController = MainViewController()
         let viewModel = makeMainViewModel()
+        viewModel.delegate = viewController
         viewController.viewModel = viewModel
         return viewController
     }
@@ -24,4 +18,4 @@ final class DependencyContainer {
     private func makeMainViewModel() -> MainViewModelProtocol {
         return MainViewModel(dataManager: dataManager)
     }
-}
+} 

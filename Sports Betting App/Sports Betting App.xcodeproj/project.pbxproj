@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D28E7D12DD66455000E7CB3 /* EventCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7CF2DD66455000E7CB3 /* EventCellDelegate.swift */; };
+		8D28E7D22DD66455000E7CB3 /* BetItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7CE2DD66455000E7CB3 /* BetItemCellDelegate.swift */; };
 		8D79A1262DD62C0A001F6B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A11D2DD62C0A001F6B70 /* Assets.xcassets */; };
 		8D79A1282DD62C0A001F6B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A1202DD62C0A001F6B70 /* LaunchScreen.storyboard */; };
 		8D79A12A2DD62C0A001F6B70 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A1132DD62C0A001F6B70 /* AlertManager.swift */; };
@@ -28,6 +30,13 @@
 		8D79A1502DD62D85001F6B70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A14B2DD62D85001F6B70 /* MainViewController.swift */; };
 		8D79A1512DD62D85001F6B70 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A14D2DD62D85001F6B70 /* MainViewModel.swift */; };
 		8D79A1522DD62D85001F6B70 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A14C2DD62D85001F6B70 /* MainCoordinator.swift */; };
+		8D79A15F2DD63727001F6B70 /* BetBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A15C2DD63727001F6B70 /* BetBasket.swift */; };
+		8D79A1602DD63727001F6B70 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A15D2DD63727001F6B70 /* Event.swift */; };
+		8D79A1722DD64F59001F6B70 /* BetItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A16F2DD64F59001F6B70 /* BetItemCell.xib */; };
+		8D79A1732DD64F59001F6B70 /* BetItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A16E2DD64F59001F6B70 /* BetItemCell.swift */; };
+		8D79A1772DD64F83001F6B70 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A1762DD64F83001F6B70 /* EventCell.xib */; };
+		8D79A1782DD64F83001F6B70 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A1752DD64F83001F6B70 /* EventCell.swift */; };
+		8D79A17A2DD65079001F6B70 /* SBLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A1792DD65079001F6B70 /* SBLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D28E7CE2DD66455000E7CB3 /* BetItemCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetItemCellDelegate.swift; sourceTree = "<group>"; };
+		8D28E7CF2DD66455000E7CB3 /* EventCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellDelegate.swift; sourceTree = "<group>"; };
 		8D79A0CE2DD62BDD001F6B70 /* Sports Betting App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Betting App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D79A0E42DD62BDF001F6B70 /* Sports Betting AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Betting AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D79A0EE2DD62BDF001F6B70 /* Sports Betting AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Betting AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +84,13 @@
 		8D79A14B2DD62D85001F6B70 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8D79A14C2DD62D85001F6B70 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		8D79A14D2DD62D85001F6B70 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8D79A15C2DD63727001F6B70 /* BetBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetBasket.swift; sourceTree = "<group>"; };
+		8D79A15D2DD63727001F6B70 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8D79A16E2DD64F59001F6B70 /* BetItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetItemCell.swift; sourceTree = "<group>"; };
+		8D79A16F2DD64F59001F6B70 /* BetItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetItemCell.xib; sourceTree = "<group>"; };
+		8D79A1752DD64F83001F6B70 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		8D79A1762DD64F83001F6B70 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		8D79A1792DD65079001F6B70 /* SBLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D28E7D02DD66455000E7CB3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8D28E7CE2DD66455000E7CB3 /* BetItemCellDelegate.swift */,
+				8D28E7CF2DD66455000E7CB3 /* EventCellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		8D79A0C52DD62BDD001F6B70 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +167,8 @@
 				8D79A1452DD62D7D001F6B70 /* Splash */,
 				8D79A14E2DD62D85001F6B70 /* Main */,
 				8D79A11C2DD62C0A001F6B70 /* AppDelegate.swift */,
+				8D79A1792DD65079001F6B70 /* SBLabel.swift */,
+				8D79A15E2DD63727001F6B70 /* Models */,
 				8D79A11D2DD62C0A001F6B70 /* Assets.xcassets */,
 				8D79A11E2DD62C0A001F6B70 /* Info.plist */,
 				8D79A1202DD62C0A001F6B70 /* LaunchScreen.storyboard */,
@@ -188,11 +217,33 @@
 			isa = PBXGroup;
 			children = (
 				8D79A14A2DD62D85001F6B70 /* Main.storyboard */,
+				8D28E7D02DD66455000E7CB3 /* Protocols */,
+				8D79A1712DD64F59001F6B70 /* Cells */,
 				8D79A14B2DD62D85001F6B70 /* MainViewController.swift */,
 				8D79A14C2DD62D85001F6B70 /* MainCoordinator.swift */,
 				8D79A14D2DD62D85001F6B70 /* MainViewModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		8D79A15E2DD63727001F6B70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D79A15C2DD63727001F6B70 /* BetBasket.swift */,
+				8D79A15D2DD63727001F6B70 /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D79A1712DD64F59001F6B70 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8D79A16E2DD64F59001F6B70 /* BetItemCell.swift */,
+				8D79A16F2DD64F59001F6B70 /* BetItemCell.xib */,
+				8D79A1752DD64F83001F6B70 /* EventCell.swift */,
+				8D79A1762DD64F83001F6B70 /* EventCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,10 +357,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D79A1722DD64F59001F6B70 /* BetItemCell.xib in Resources */,
 				8D79A1262DD62C0A001F6B70 /* Assets.xcassets in Resources */,
 				8D79A14F2DD62D85001F6B70 /* Main.storyboard in Resources */,
 				8D79A1282DD62C0A001F6B70 /* LaunchScreen.storyboard in Resources */,
 				8D79A1462DD62D7D001F6B70 /* Splash.storyboard in Resources */,
+				8D79A1772DD64F83001F6B70 /* EventCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,15 +389,22 @@
 			files = (
 				8D79A12A2DD62C0A001F6B70 /* AlertManager.swift in Sources */,
 				8D79A12B2DD62C0A001F6B70 /* ServiceManager.swift in Sources */,
+				8D28E7D12DD66455000E7CB3 /* EventCellDelegate.swift in Sources */,
+				8D28E7D22DD66455000E7CB3 /* BetItemCellDelegate.swift in Sources */,
 				8D79A1472DD62D7D001F6B70 /* SplashViewController.swift in Sources */,
 				8D79A1482DD62D7D001F6B70 /* SplashCoordinator.swift in Sources */,
+				8D79A1732DD64F59001F6B70 /* BetItemCell.swift in Sources */,
 				8D79A12D2DD62C0A001F6B70 /* DataManager.swift in Sources */,
 				8D79A12E2DD62C0A001F6B70 /* LoadingManager.swift in Sources */,
 				8D79A1502DD62D85001F6B70 /* MainViewController.swift in Sources */,
 				8D79A1512DD62D85001F6B70 /* MainViewModel.swift in Sources */,
 				8D79A1522DD62D85001F6B70 /* MainCoordinator.swift in Sources */,
+				8D79A15F2DD63727001F6B70 /* BetBasket.swift in Sources */,
+				8D79A1782DD64F83001F6B70 /* EventCell.swift in Sources */,
+				8D79A1602DD63727001F6B70 /* Event.swift in Sources */,
 				8D79A1302DD62C0A001F6B70 /* NotificationManager.swift in Sources */,
 				8D79A1322DD62C0A001F6B70 /* AppDelegate.swift in Sources */,
+				8D79A17A2DD65079001F6B70 /* SBLabel.swift in Sources */,
 				8D79A1332DD62C0A001F6B70 /* SceneDelegate.swift in Sources */,
 				8D79A1402DD62D57001F6B70 /* AppCoordinator.swift in Sources */,
 				8D79A1412DD62D57001F6B70 /* AppDependencyContainer.swift in Sources */,

@@ -1,26 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LjG-hP-qXk">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main-->
+        <!--Sports Betting-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Main" id="BYZ-38-t0r" customClass="MainViewController" customModule="Sports_Betting_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" title="Sports Betting" id="BYZ-38-t0r" customClass="MainViewController" customModule="Sports_Betting_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VQj-9O-8it">
+                                <rect key="frame" x="0.0" y="155" width="393" height="697"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" verticalHuggingPriority="251" placeholder="Search events..." translatesAutoresizingMaskIntoConstraints="NO" id="5Z7-uG-orc">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="nKu-8E-bsX"/>
+                                        </connections>
+                                    </searchBar>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h5P-rT-NR1">
+                                        <rect key="frame" x="0.0" y="61" width="393" height="32"/>
+                                        <segments>
+                                            <segment title="Events"/>
+                                            <segment title="My Bets"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0GE-Tz-ftS"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rhe-V5-Lki">
+                                        <rect key="frame" x="0.0" y="97" width="393" height="600"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="Vdh-4O-VR5"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="5RJ-Xy-D4Z"/>
+                                        </connections>
+                                    </tableView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4Z-LJ-SYk" userLabel="Basket Info View">
+                                        <rect key="frame" x="0.0" y="603" width="393" height="60"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="167" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-Jl-euw">
+                                                <rect key="frame" x="15" y="0.0" width="363" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0 Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-Uo-qCQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Odds: 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3l-KW-Tga">
+                                                        <rect key="frame" x="235" y="0.0" width="128" height="60"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="HLO-at-ehG"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstItem="vRK-Jl-euw" firstAttribute="top" secondItem="X4Z-LJ-SYk" secondAttribute="top" id="e3Y-zs-Nax"/>
+                                            <constraint firstItem="vRK-Jl-euw" firstAttribute="leading" secondItem="X4Z-LJ-SYk" secondAttribute="leading" constant="15" id="fBx-hs-xZ7"/>
+                                            <constraint firstAttribute="bottom" secondItem="vRK-Jl-euw" secondAttribute="bottom" id="xjx-Dp-ROz"/>
+                                            <constraint firstAttribute="trailing" secondItem="vRK-Jl-euw" secondAttribute="trailing" constant="15" id="zbF-Xa-nls"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VQj-9O-8it" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5PR-K9-S2l"/>
+                            <constraint firstItem="VQj-9O-8it" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PBV-Vh-ayZ"/>
+                            <constraint firstItem="VQj-9O-8it" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Piw-mm-mcF"/>
+                            <constraint firstAttribute="bottom" secondItem="VQj-9O-8it" secondAttribute="bottom" id="a8E-if-qGA"/>
+                            <constraint firstItem="vRK-Jl-euw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xng-X6-r1x"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Sports Betting" id="Bmj-HQ-KVS"/>
+                    <connections>
+                        <outlet property="basketCountLabel" destination="KLu-Uo-qCQ" id="JRC-2X-2Lg"/>
+                        <outlet property="basketInfoView" destination="X4Z-LJ-SYk" id="44h-tC-v49"/>
+                        <outlet property="basketTotalLabel" destination="m3l-KW-Tga" id="rPM-mL-c3Q"/>
+                        <outlet property="searchBar" destination="5Z7-uG-orc" id="IEK-SR-ylh"/>
+                        <outlet property="segmentedControl" destination="h5P-rT-NR1" id="hP6-cf-dZe"/>
+                        <outlet property="tableView" destination="rhe-V5-Lki" id="A0z-1K-I8k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="-2"/>
+            <point key="canvasLocation" x="1028.2442748091603" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DP4-3E-Wd5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LjG-hP-qXk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="U5V-rC-RDL">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WV9-h2-Vl5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBY-jb-sfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         
 //        let container = AppDependencyContainer(storageType: .userDefaults)
-        let container = AppDependencyContainer()
+        let container = DependencyContainer()
         
         // Debug - Print CoreData store location
         if let docsDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
