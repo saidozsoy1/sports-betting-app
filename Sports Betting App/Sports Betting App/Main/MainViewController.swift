@@ -61,10 +61,10 @@ class MainViewController: UIViewController {
     
     // MARK: - Update UI
     func updateBasketInfo() {
-        let basketCount = BetBasket.shared.items.count
+        let basketCount = viewModel.getBetBasketItemCount()
         basketCountLabel.text = "\(basketCount) Event\(basketCount == 1 ? "" : "s")"
         
-        basketTotalLabel.text = "Total Odds: \(BetBasket.shared.formattedTotalPrice)"
+        basketTotalLabel.text = "Total Odds: \(viewModel.getBetBasketTotalOdds())"
         
         basketInfoView.isHidden = basketCount == 0
     }
@@ -81,21 +81,23 @@ class MainViewController: UIViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return segmentedControl.selectedSegmentIndex == 0 ? viewModel.filteredEvents.count : BetBasket.shared.items.count
+        return segmentedControl.selectedSegmentIndex == 0 ? viewModel.filteredEvents.count : viewModel.getBetBasketItemCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if segmentedControl.selectedSegmentIndex == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
-            let event = viewModel.filteredEvents[indexPath.row]
-            cell.configure(with: event)
-            cell.delegate = self
+            if let event = viewModel.getEventAt(index: indexPath.row) {
+                cell.configure(with: event)
+                cell.delegate = self
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BetItemCell", for: indexPath) as! BetItemCell
-            let betItem = BetBasket.shared.items[indexPath.row]
-            cell.configure(with: betItem)
-            cell.delegate = self
+            if let betItem = viewModel.getBetItemAt(index: indexPath.row) {
+                cell.configure(with: betItem)
+                cell.delegate = self
+            }
             return cell
         }
     }
@@ -140,7 +142,7 @@ extension MainViewController: MainViewModelDelegate {
 extension MainViewController: EventCellDelegate {
     func didSelectOdd(for event: Event, oddType: OddType, selectedOdd: Double) {
         let outcome = Outcome(name: oddType.rawValue, price: selectedOdd)
-        BetBasket.shared.addBet(
+        viewModel.addToBetBasket(
             eventId: event.id,
             eventName: "\(event.homeTeam) vs \(event.awayTeam)",
             outcome: outcome,
@@ -155,7 +157,7 @@ extension MainViewController: EventCellDelegate {
 // MARK: - BetItemCellDelegate
 extension MainViewController: BetItemCellDelegate {
     func didTapDeleteButton(for betItem: BetItem) {
-        BetBasket.shared.removeBet(eventId: betItem.eventId)
+        viewModel.removeFromBetBasket(eventId: betItem.eventId)
         
         tableView.reloadData()
         updateBasketInfo()

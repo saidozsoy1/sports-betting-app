@@ -27,6 +27,11 @@ protocol MainViewModelProtocol {
     func addToBetBasket(eventId: String, eventName: String, outcome: Outcome, marketKey: String, bookmakerTitle: String)
     func removeFromBetBasket(eventId: String)
     func isBetInBasket(eventId: String) -> Bool
+    func logEventDetails(event: Event)
+    func getBetBasketItemCount() -> Int
+    func getBetBasketTotalOdds() -> String
+    func getBetItemAt(index: Int) -> BetItem?
+    func getEventAt(index: Int) -> Event?
 }
 
 final class MainViewModel: MainViewModelProtocol {
@@ -102,6 +107,28 @@ final class MainViewModel: MainViewModelProtocol {
     
     func isBetInBasket(eventId: String) -> Bool {
         return betBasket.items.contains(where: { $0.eventId == eventId })
+    }
+    
+    func logEventDetails(event: Event) {
+        FirebaseAnalyticsManager.shared.logEvent(.matchDetailViewed(event: event))
+    }
+    
+    func getBetBasketItemCount() -> Int {
+        return betBasket.items.count
+    }
+    
+    func getBetBasketTotalOdds() -> String {
+        return betBasket.formattedTotalPrice
+    }
+    
+    func getBetItemAt(index: Int) -> BetItem? {
+        guard index >= 0 && index < betBasket.items.count else { return nil }
+        return betBasket.items[index]
+    }
+    
+    func getEventAt(index: Int) -> Event? {
+        guard index >= 0 && index < filteredEvents.count else { return nil }
+        return filteredEvents[index]
     }
     
     deinit {

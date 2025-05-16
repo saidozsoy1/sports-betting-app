@@ -35,7 +35,7 @@ final class BetBasket {
         if !items.contains(where: { $0.eventId == eventId }) {
             items.append(betItem)
             NotificationCenter.default.post(name: Notification.Name("BetBasketUpdated"), object: nil)
-//            FirebaseAnalyticsManager.shared.logAddToCart(item: betItem)
+            FirebaseAnalyticsManager.shared.logEvent(.addToCart(item: betItem))
         }
     }
     
@@ -44,7 +44,7 @@ final class BetBasket {
             let removedItem = items[index]
             items.remove(at: index)
             NotificationCenter.default.post(name: Notification.Name("BetBasketUpdated"), object: nil)
-//            FirebaseAnalyticsManager.shared.logRemoveFromCart(item: removedItem)
+            FirebaseAnalyticsManager.shared.logEvent(.removeFromCart(item: removedItem))
         }
     }
     

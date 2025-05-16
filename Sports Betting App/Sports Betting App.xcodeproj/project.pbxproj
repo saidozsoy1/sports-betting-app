@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8D28E7D12DD66455000E7CB3 /* EventCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7CF2DD66455000E7CB3 /* EventCellDelegate.swift */; };
 		8D28E7D22DD66455000E7CB3 /* BetItemCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7CE2DD66455000E7CB3 /* BetItemCellDelegate.swift */; };
+		8D28E7D42DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7D32DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift */; };
+		8D28E7D62DD7BE3F000E7CB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D28E7D52DD7BE3F000E7CB3 /* GoogleService-Info.plist */; };
+		8D28E7D92DD7BEF2000E7CB3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D28E7D82DD7BEF2000E7CB3 /* FirebaseAnalytics */; };
 		8D79A1262DD62C0A001F6B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A11D2DD62C0A001F6B70 /* Assets.xcassets */; };
 		8D79A1282DD62C0A001F6B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A1202DD62C0A001F6B70 /* LaunchScreen.storyboard */; };
 		8D79A12A2DD62C0A001F6B70 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A1132DD62C0A001F6B70 /* AlertManager.swift */; };
@@ -59,6 +62,8 @@
 /* Begin PBXFileReference section */
 		8D28E7CE2DD66455000E7CB3 /* BetItemCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetItemCellDelegate.swift; sourceTree = "<group>"; };
 		8D28E7CF2DD66455000E7CB3 /* EventCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellDelegate.swift; sourceTree = "<group>"; };
+		8D28E7D32DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsManager.swift; sourceTree = "<group>"; };
+		8D28E7D52DD7BE3F000E7CB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D79A0CE2DD62BDD001F6B70 /* Sports Betting App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Betting App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D79A0E42DD62BDF001F6B70 /* Sports Betting AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Betting AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D79A0EE2DD62BDF001F6B70 /* Sports Betting AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Betting AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D28E7D92DD7BEF2000E7CB3 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +159,7 @@
 				8D79A1132DD62C0A001F6B70 /* AlertManager.swift */,
 				8D79A1142DD62C0A001F6B70 /* ServiceManager.swift */,
 				8D79A1162DD62C0A001F6B70 /* DataManager.swift */,
+				8D28E7D32DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift */,
 				8D79A1172DD62C0A001F6B70 /* LoadingManager.swift */,
 				8D79A1192DD62C0A001F6B70 /* NotificationManager.swift */,
 			);
@@ -171,6 +178,7 @@
 				8D79A15E2DD63727001F6B70 /* Models */,
 				8D79A11D2DD62C0A001F6B70 /* Assets.xcassets */,
 				8D79A11E2DD62C0A001F6B70 /* Info.plist */,
+				8D28E7D52DD7BE3F000E7CB3 /* GoogleService-Info.plist */,
 				8D79A1202DD62C0A001F6B70 /* LaunchScreen.storyboard */,
 				8D79A1232DD62C0A001F6B70 /* SceneDelegate.swift */,
 			);
@@ -263,6 +271,7 @@
 			);
 			name = "Sports Betting App";
 			packageProductDependencies = (
+				8D28E7D82DD7BEF2000E7CB3 /* FirebaseAnalytics */,
 			);
 			productName = "Sports Betting App";
 			productReference = 8D79A0CE2DD62BDD001F6B70 /* Sports Betting App.app */;
@@ -340,6 +349,9 @@
 			);
 			mainGroup = 8D79A0C52DD62BDD001F6B70;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8D28E7D72DD7BEF2000E7CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8D79A0CF2DD62BDD001F6B70 /* Products */;
 			projectDirPath = "";
@@ -363,6 +375,7 @@
 				8D79A1282DD62C0A001F6B70 /* LaunchScreen.storyboard in Resources */,
 				8D79A1462DD62D7D001F6B70 /* Splash.storyboard in Resources */,
 				8D79A1772DD64F83001F6B70 /* EventCell.xib in Resources */,
+				8D28E7D62DD7BE3F000E7CB3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +421,7 @@
 				8D79A1332DD62C0A001F6B70 /* SceneDelegate.swift in Sources */,
 				8D79A1402DD62D57001F6B70 /* AppCoordinator.swift in Sources */,
 				8D79A1412DD62D57001F6B70 /* AppDependencyContainer.swift in Sources */,
+				8D28E7D42DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +764,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D28E7D72DD7BEF2000E7CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D28E7D82DD7BEF2000E7CB3 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D28E7D72DD7BEF2000E7CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8D79A0C62DD62BDD001F6B70 /* Project object */;
 }

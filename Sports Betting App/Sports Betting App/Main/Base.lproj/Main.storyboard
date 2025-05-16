@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VQj-9O-8it">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VQj-9O-8it" userLabel="Main Stack View">
                                 <rect key="frame" x="0.0" y="155" width="393" height="697"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" verticalHuggingPriority="251" placeholder="Search events..." translatesAutoresizingMaskIntoConstraints="NO" id="5Z7-uG-orc">
@@ -47,7 +47,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4Z-LJ-SYk" userLabel="Basket Info View">
                                         <rect key="frame" x="0.0" y="603" width="393" height="60"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="167" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-Jl-euw">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="167" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-Jl-euw" userLabel="Basket Stack View">
                                                 <rect key="frame" x="15" y="0.0" width="363" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0 Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-Uo-qCQ">
