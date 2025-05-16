@@ -12,6 +12,11 @@
 		8D28E7D42DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7D32DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift */; };
 		8D28E7D62DD7BE3F000E7CB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D28E7D52DD7BE3F000E7CB3 /* GoogleService-Info.plist */; };
 		8D28E7D92DD7BEF2000E7CB3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D28E7D82DD7BEF2000E7CB3 /* FirebaseAnalytics */; };
+		8D28E7DB2DD7C945000E7CB3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7DA2DD7C945000E7CB3 /* ApiManager.swift */; };
+		8D28E7DE2DD7D604000E7CB3 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D28E7DD2DD7D604000E7CB3 /* IQKeyboardManagerSwift */; };
+		8D28E7E02DD7DB46000E7CB3 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7DF2DD7DB46000E7CB3 /* Sport.swift */; };
+		8D28E7E32DD7DB71000E7CB3 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7E22DD7DB71000E7CB3 /* Region.swift */; };
+		8D28E7E52DD7DB80000E7CB3 /* MarketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7E42DD7DB80000E7CB3 /* MarketType.swift */; };
 		8D79A1262DD62C0A001F6B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A11D2DD62C0A001F6B70 /* Assets.xcassets */; };
 		8D79A1282DD62C0A001F6B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A1202DD62C0A001F6B70 /* LaunchScreen.storyboard */; };
 		8D79A12A2DD62C0A001F6B70 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A1132DD62C0A001F6B70 /* AlertManager.swift */; };
@@ -64,6 +69,10 @@
 		8D28E7CF2DD66455000E7CB3 /* EventCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellDelegate.swift; sourceTree = "<group>"; };
 		8D28E7D32DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsManager.swift; sourceTree = "<group>"; };
 		8D28E7D52DD7BE3F000E7CB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8D28E7DA2DD7C945000E7CB3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		8D28E7DF2DD7DB46000E7CB3 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		8D28E7E22DD7DB71000E7CB3 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		8D28E7E42DD7DB80000E7CB3 /* MarketType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketType.swift; sourceTree = "<group>"; };
 		8D79A0CE2DD62BDD001F6B70 /* Sports Betting App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Betting App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D79A0E42DD62BDF001F6B70 /* Sports Betting AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Betting AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D79A0EE2DD62BDF001F6B70 /* Sports Betting AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Betting AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D28E7D92DD7BEF2000E7CB3 /* FirebaseAnalytics in Frameworks */,
+				8D28E7DE2DD7D604000E7CB3 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +143,26 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		8D28E7E12DD7DB61000E7CB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D28E7DF2DD7DB46000E7CB3 /* Sport.swift */,
+				8D28E7E22DD7DB71000E7CB3 /* Region.swift */,
+				8D79A15C2DD63727001F6B70 /* BetBasket.swift */,
+				8D79A15D2DD63727001F6B70 /* Event.swift */,
+				8D28E7E42DD7DB80000E7CB3 /* MarketType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D28E7E62DD7DBDB000E7CB3 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				8D79A1792DD65079001F6B70 /* SBLabel.swift */,
+			);
+			path = CustomClasses;
+			sourceTree = "<group>";
+		};
 		8D79A0C52DD62BDD001F6B70 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +188,7 @@
 			children = (
 				8D79A1132DD62C0A001F6B70 /* AlertManager.swift */,
 				8D79A1142DD62C0A001F6B70 /* ServiceManager.swift */,
+				8D28E7DA2DD7C945000E7CB3 /* ApiManager.swift */,
 				8D79A1162DD62C0A001F6B70 /* DataManager.swift */,
 				8D28E7D32DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift */,
 				8D79A1172DD62C0A001F6B70 /* LoadingManager.swift */,
@@ -173,13 +204,12 @@
 				8D79A11B2DD62C0A001F6B70 /* Managers */,
 				8D79A1452DD62D7D001F6B70 /* Splash */,
 				8D79A14E2DD62D85001F6B70 /* Main */,
-				8D79A11C2DD62C0A001F6B70 /* AppDelegate.swift */,
-				8D79A1792DD65079001F6B70 /* SBLabel.swift */,
-				8D79A15E2DD63727001F6B70 /* Models */,
-				8D79A11D2DD62C0A001F6B70 /* Assets.xcassets */,
+				8D28E7E62DD7DBDB000E7CB3 /* CustomClasses */,
 				8D79A11E2DD62C0A001F6B70 /* Info.plist */,
 				8D28E7D52DD7BE3F000E7CB3 /* GoogleService-Info.plist */,
+				8D79A11D2DD62C0A001F6B70 /* Assets.xcassets */,
 				8D79A1202DD62C0A001F6B70 /* LaunchScreen.storyboard */,
+				8D79A11C2DD62C0A001F6B70 /* AppDelegate.swift */,
 				8D79A1232DD62C0A001F6B70 /* SceneDelegate.swift */,
 			);
 			path = "Sports Betting App";
@@ -224,23 +254,15 @@
 		8D79A14E2DD62D85001F6B70 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				8D79A14A2DD62D85001F6B70 /* Main.storyboard */,
 				8D28E7D02DD66455000E7CB3 /* Protocols */,
 				8D79A1712DD64F59001F6B70 /* Cells */,
+				8D28E7E12DD7DB61000E7CB3 /* Models */,
+				8D79A14A2DD62D85001F6B70 /* Main.storyboard */,
 				8D79A14B2DD62D85001F6B70 /* MainViewController.swift */,
-				8D79A14C2DD62D85001F6B70 /* MainCoordinator.swift */,
 				8D79A14D2DD62D85001F6B70 /* MainViewModel.swift */,
+				8D79A14C2DD62D85001F6B70 /* MainCoordinator.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		8D79A15E2DD63727001F6B70 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8D79A15C2DD63727001F6B70 /* BetBasket.swift */,
-				8D79A15D2DD63727001F6B70 /* Event.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		8D79A1712DD64F59001F6B70 /* Cells */ = {
@@ -272,6 +294,7 @@
 			name = "Sports Betting App";
 			packageProductDependencies = (
 				8D28E7D82DD7BEF2000E7CB3 /* FirebaseAnalytics */,
+				8D28E7DD2DD7D604000E7CB3 /* IQKeyboardManagerSwift */,
 			);
 			productName = "Sports Betting App";
 			productReference = 8D79A0CE2DD62BDD001F6B70 /* Sports Betting App.app */;
@@ -351,6 +374,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				8D28E7D72DD7BEF2000E7CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8D28E7DC2DD7D604000E7CB3 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8D79A0CF2DD62BDD001F6B70 /* Products */;
@@ -403,11 +427,14 @@
 				8D79A12A2DD62C0A001F6B70 /* AlertManager.swift in Sources */,
 				8D79A12B2DD62C0A001F6B70 /* ServiceManager.swift in Sources */,
 				8D28E7D12DD66455000E7CB3 /* EventCellDelegate.swift in Sources */,
+				8D28E7E02DD7DB46000E7CB3 /* Sport.swift in Sources */,
 				8D28E7D22DD66455000E7CB3 /* BetItemCellDelegate.swift in Sources */,
 				8D79A1472DD62D7D001F6B70 /* SplashViewController.swift in Sources */,
 				8D79A1482DD62D7D001F6B70 /* SplashCoordinator.swift in Sources */,
+				8D28E7E52DD7DB80000E7CB3 /* MarketType.swift in Sources */,
 				8D79A1732DD64F59001F6B70 /* BetItemCell.swift in Sources */,
 				8D79A12D2DD62C0A001F6B70 /* DataManager.swift in Sources */,
+				8D28E7E32DD7DB71000E7CB3 /* Region.swift in Sources */,
 				8D79A12E2DD62C0A001F6B70 /* LoadingManager.swift in Sources */,
 				8D79A1502DD62D85001F6B70 /* MainViewController.swift in Sources */,
 				8D79A1512DD62D85001F6B70 /* MainViewModel.swift in Sources */,
@@ -420,6 +447,7 @@
 				8D79A17A2DD65079001F6B70 /* SBLabel.swift in Sources */,
 				8D79A1332DD62C0A001F6B70 /* SceneDelegate.swift in Sources */,
 				8D79A1402DD62D57001F6B70 /* AppCoordinator.swift in Sources */,
+				8D28E7DB2DD7C945000E7CB3 /* ApiManager.swift in Sources */,
 				8D79A1412DD62D57001F6B70 /* AppDependencyContainer.swift in Sources */,
 				8D28E7D42DD7BDAF000E7CB3 /* FirebaseAnalyticsManager.swift in Sources */,
 			);
@@ -774,6 +802,14 @@
 				minimumVersion = 11.12.0;
 			};
 		};
+		8D28E7DC2DD7D604000E7CB3 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -781,6 +817,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8D28E7D72DD7BEF2000E7CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		8D28E7DD2DD7D604000E7CB3 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D28E7DC2DD7D604000E7CB3 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -47,11 +47,11 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4Z-LJ-SYk" userLabel="Basket Info View">
                                         <rect key="frame" x="0.0" y="603" width="393" height="60"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="167" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-Jl-euw" userLabel="Basket Stack View">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-Jl-euw" userLabel="Basket Stack View">
                                                 <rect key="frame" x="15" y="0.0" width="363" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0 Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-Uo-qCQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>

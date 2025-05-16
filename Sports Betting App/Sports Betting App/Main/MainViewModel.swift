@@ -23,7 +23,6 @@ protocol MainViewModelProtocol {
     func fetchEvents()
     func searchEvents(query: String)
     func filterEvents(by query: String)
-    func getEventDetails(id: String) -> Event?
     func addToBetBasket(eventId: String, eventName: String, outcome: Outcome, marketKey: String, bookmakerTitle: String)
     func removeFromBetBasket(eventId: String)
     func isBetInBasket(eventId: String) -> Bool
@@ -91,10 +90,6 @@ final class MainViewModel: MainViewModelProtocol {
             }
         }
         delegate?.eventsUpdated()
-    }
-    
-    func getEventDetails(id: String) -> Event? {
-        return dataManager.getEventDetails(id: id)
     }
     
     func addToBetBasket(eventId: String, eventName: String, outcome: Outcome, marketKey: String, bookmakerTitle: String) {
