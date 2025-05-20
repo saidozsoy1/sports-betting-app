@@ -31,6 +31,7 @@ class ServiceManager {
         var auOdds: [Event]?
         var error: NetworkError?
         
+        LoadingManager.showLoading()
         // US region
         group.enter()
         apiService.request(APIEndpoint.upcomingOdds(region: .us, market: .h2h)) { (result: Result<[Event], NetworkError>) in
@@ -98,7 +99,7 @@ class ServiceManager {
             if let auOdds = auOdds {
                 allOdds.append(contentsOf: auOdds)
             }
-            
+            LoadingManager.hideLoading()
             completion(.success(allOdds))
         }
     }

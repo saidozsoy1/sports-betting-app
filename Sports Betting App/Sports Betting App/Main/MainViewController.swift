@@ -34,6 +34,8 @@ class MainViewController: UIViewController {
         setupUI()
         setupBindings()
         
+        // loading can be triggered from here. But because loading manager is capable I do it from Service Manager to prevent human error on missing hideLoading.
+//        showLoading()
         viewModel.fetchEvents()
     }
     
@@ -101,6 +103,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let event = viewModel.getEventAt(index: indexPath.row) {
+            // Didnt make a detail screen so this event will send every time an event is tapped
+            viewModel.logEventDetails(event: event)
+        }
+    }
 }
 
 // MARK: - UISearchBarDelegate
@@ -122,6 +131,8 @@ extension MainViewController: MainViewModelDelegate {
     
     func didFetchEvents() {
         tableView.reloadData()
+        // Loading shown in didload would need to be hidden here or in a fail case inside failed function
+//        hideLoading()
     }
     
     func didFailToFetchEvents(with error: Error) {
@@ -132,6 +143,7 @@ extension MainViewController: MainViewModelDelegate {
     
     func didUpdateBetBasket() {
         updateBasketInfo()
+        // update basket view
         if segmentedControl.selectedSegmentIndex == 1 {
             tableView.reloadData()
         }

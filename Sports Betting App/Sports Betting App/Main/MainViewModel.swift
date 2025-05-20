@@ -48,7 +48,7 @@ final class MainViewModel: MainViewModelProtocol {
         self.dataManager = dataManager
         
         // Listen for bet basket updates
-        NotificationCenter.default.addObserver(self, selector: #selector(betBasketUpdated), name: Notification.Name("BetBasketUpdated"), object: nil)
+        NotificationManager.listen(self, selector: #selector(betBasketUpdated), name: .betBasketUpdated)
     }
     
     @objc private func betBasketUpdated() {
@@ -127,6 +127,6 @@ final class MainViewModel: MainViewModelProtocol {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        NotificationManager.removeObserver(self, name: .betBasketUpdated)
     }
 }

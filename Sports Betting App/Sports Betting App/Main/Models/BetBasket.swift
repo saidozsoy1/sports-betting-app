@@ -34,7 +34,8 @@ final class BetBasket {
         // Check if we already have this exact bet
         if !items.contains(where: { $0.eventId == eventId }) {
             items.append(betItem)
-            NotificationCenter.default.post(name: Notification.Name("BetBasketUpdated"), object: nil)
+            
+            NotificationManager.post(.betBasketUpdated)
             FirebaseAnalyticsManager.shared.logEvent(.addToCart(item: betItem))
         }
     }
@@ -43,14 +44,15 @@ final class BetBasket {
         if let index = items.firstIndex(where: { $0.eventId == eventId }) {
             let removedItem = items[index]
             items.remove(at: index)
-            NotificationCenter.default.post(name: Notification.Name("BetBasketUpdated"), object: nil)
+            
+            NotificationManager.post(.betBasketUpdated)
             FirebaseAnalyticsManager.shared.logEvent(.removeFromCart(item: removedItem))
         }
     }
     
     func clearBasket() {
         items.removeAll()
-        NotificationCenter.default.post(name: Notification.Name("BetBasketUpdated"), object: nil)
+        NotificationManager.post(.betBasketUpdated)
     }
     
     var totalPrice: Double {
