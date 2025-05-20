@@ -28,10 +28,43 @@ enum APIEndpoint {
     }
 }
 
-class ApiManager {
-    static let shared = ApiManager()
+/// Protocol defining API service capabilities
+protocol ApiServiceProtocol {
+    /// Make a request to an endpoint and decode the response
+    /// - Parameters:
+    ///   - endpoint: The API endpoint to request
+    ///   - completion: Completion handler with result containing either decoded data or error
+    func request<T: Decodable>(_ endpoint: APIEndpoint, completion: @escaping (Result<T, NetworkError>) -> Void)
     
-    private init() {}
+    /// Make a request to an endpoint with additional parameters
+    /// - Parameters:
+    ///   - endpoint: The API endpoint to request
+    ///   - method: HTTP method (GET, POST, etc)
+    ///   - parameters: Optional parameters for POST/PUT requests
+    ///   - completion: Completion handler with result containing either decoded data or error
+    func request<T: Decodable>(_ endpoint: APIEndpoint, method: String, parameters: [String: Any]?, completion: @escaping (Result<T, NetworkError>) -> Void)
+    
+    /// Make a request to a URL string and decode the response
+    /// - Parameters:
+    ///   - urlString: The URL string to request
+    ///   - completion: Completion handler with result containing either decoded data or error
+    func request<T: Decodable>(_ urlString: String, completion: @escaping (Result<T, NetworkError>) -> Void)
+    
+    /// Make a request to a URL string with additional parameters
+    /// - Parameters:
+    ///   - urlString: The URL string to request
+    ///   - method: HTTP method (GET, POST, etc)
+    ///   - parameters: Optional parameters for POST/PUT requests
+    ///   - completion: Completion handler with result containing either decoded data or error
+    func request<T: Decodable>(_ urlString: String, method: String, parameters: [String: Any]?, completion: @escaping (Result<T, NetworkError>) -> Void)
+}
+
+class ApiManager: ApiServiceProtocol {
+    private let session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
     func request<T: Decodable>(_ endpoint: APIEndpoint, completion: @escaping (Swift.Result<T, NetworkError>) -> Void) {
         request(endpoint.url, completion: completion)
@@ -50,7 +83,7 @@ class ApiManager {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 completion(.failure(.networkError))
                 return
@@ -92,7 +125,7 @@ class ApiManager {
             }
         }
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 completion(.failure(.networkError))
                 return

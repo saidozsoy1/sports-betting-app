@@ -7,17 +7,10 @@
 
 import Foundation
 
-protocol ApiServiceProtocol {
-    func request<T: Decodable>(_ endpoint: APIEndpoint, completion: @escaping (Swift.Result<T, NetworkError>) -> Void)
-}
-
-// Default implementation to make ApiManager conform to the protocol
-extension ApiManager: ApiServiceProtocol {}
-
 class ServiceManager {
     private let apiService: ApiServiceProtocol
     
-    init(apiService: ApiServiceProtocol = ApiManager.shared) {
+    init(apiService: ApiServiceProtocol = ApiManager()) {
         self.apiService = apiService
     }
     

@@ -1,10 +1,14 @@
 import UIKit
 
 final class DependencyContainer {
+    private let apiService: ApiServiceProtocol
+    private let serviceManager: ServiceManager
     private let dataManager: DataManaging
     
     init() {
-        self.dataManager = DataManager()
+        self.apiService = ApiManager()
+        self.serviceManager = ServiceManager(apiService: apiService)
+        self.dataManager = DataManager(serviceManager: serviceManager)
     }
     
     func makeMainViewController() -> MainViewController {

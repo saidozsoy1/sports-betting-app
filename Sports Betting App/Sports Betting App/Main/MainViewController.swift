@@ -64,11 +64,13 @@ class MainViewController: UIViewController {
     // MARK: - Update UI
     func updateBasketInfo() {
         let basketCount = viewModel.getBetBasketItemCount()
-        basketCountLabel.text = "\(basketCount) Event\(basketCount == 1 ? "" : "s")"
-        
-        basketTotalLabel.text = "Total Odds: \(viewModel.getBetBasketTotalOdds())"
-        
-        basketInfoView.isHidden = basketCount == 0
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.basketCountLabel.text = "\(basketCount) Event\(basketCount == 1 ? "" : "s")"
+            self.basketTotalLabel.text = "Total Odds: \(self.viewModel.getBetBasketTotalOdds())"
+            self.basketInfoView.isHidden = basketCount == 0
+        }
     }
     
     // MARK: - Actions
