@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "BAD411E5-536E-49A0-8DEE-45678259EB89",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Sports Betting App.xcodeproj",
+      "identifier" : "8D79A0CD2DD62BDD001F6B70",
+      "name" : "Sports Betting App"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Sports Betting App.xcodeproj",
+        "identifier" : "8D79A0E32DD62BDF001F6B70",
+        "name" : "Sports Betting AppTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Sports Betting App.xcodeproj",
+        "identifier" : "8D79A0ED2DD62BDF001F6B70",
+        "name" : "Sports Betting AppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -17,6 +17,9 @@
 		8D28E7E02DD7DB46000E7CB3 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7DF2DD7DB46000E7CB3 /* Sport.swift */; };
 		8D28E7E32DD7DB71000E7CB3 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7E22DD7DB71000E7CB3 /* Region.swift */; };
 		8D28E7E52DD7DB80000E7CB3 /* MarketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28E7E42DD7DB80000E7CB3 /* MarketType.swift */; };
+		8D421B882DDCC17F00A64F32 /* ApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421B852DDCC17F00A64F32 /* ApiManagerTests.swift */; };
+		8D421B8A2DDCC17F00A64F32 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421B872DDCC17F00A64F32 /* ModelTests.swift */; };
+		8D421B8D2DDCC2C200A64F32 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421B8B2DDCC2C200A64F32 /* MockApiService.swift */; };
 		8D79A1262DD62C0A001F6B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A11D2DD62C0A001F6B70 /* Assets.xcassets */; };
 		8D79A1282DD62C0A001F6B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D79A1202DD62C0A001F6B70 /* LaunchScreen.storyboard */; };
 		8D79A12A2DD62C0A001F6B70 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A1132DD62C0A001F6B70 /* AlertManager.swift */; };
@@ -73,6 +76,10 @@
 		8D28E7DF2DD7DB46000E7CB3 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		8D28E7E22DD7DB71000E7CB3 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		8D28E7E42DD7DB80000E7CB3 /* MarketType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketType.swift; sourceTree = "<group>"; };
+		8D421B852DDCC17F00A64F32 /* ApiManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerTests.swift; sourceTree = "<group>"; };
+		8D421B872DDCC17F00A64F32 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		8D421B8B2DDCC2C200A64F32 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
+		8D421B8E2DDCC7AE00A64F32 /* Sports Betting App.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Sports Betting App.xctestplan"; sourceTree = "<group>"; };
 		8D79A0CE2DD62BDD001F6B70 /* Sports Betting App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Betting App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D79A0E42DD62BDF001F6B70 /* Sports Betting AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Betting AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D79A0EE2DD62BDF001F6B70 /* Sports Betting AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sports Betting AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,9 +170,18 @@
 			path = CustomClasses;
 			sourceTree = "<group>";
 		};
+		8D421B8C2DDCC2C200A64F32 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8D421B8B2DDCC2C200A64F32 /* MockApiService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		8D79A0C52DD62BDD001F6B70 = {
 			isa = PBXGroup;
 			children = (
+				8D421B8E2DDCC7AE00A64F32 /* Sports Betting App.xctestplan */,
 				8D79A1252DD62C0A001F6B70 /* Sports Betting App */,
 				8D79A1362DD62C0E001F6B70 /* Sports Betting AppTests */,
 				8D79A13A2DD62C0E001F6B70 /* Sports Betting AppUITests */,
@@ -218,7 +234,10 @@
 		8D79A1362DD62C0E001F6B70 /* Sports Betting AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				8D421B8C2DDCC2C200A64F32 /* Mocks */,
 				8D79A1352DD62C0E001F6B70 /* Sports_Betting_AppTests.swift */,
+				8D421B852DDCC17F00A64F32 /* ApiManagerTests.swift */,
+				8D421B872DDCC17F00A64F32 /* ModelTests.swift */,
 			);
 			path = "Sports Betting AppTests";
 			sourceTree = "<group>";
@@ -458,6 +477,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D79A1372DD62C0E001F6B70 /* Sports_Betting_AppTests.swift in Sources */,
+				8D421B882DDCC17F00A64F32 /* ApiManagerTests.swift in Sources */,
+				8D421B8D2DDCC2C200A64F32 /* MockApiService.swift in Sources */,
+				8D421B8A2DDCC17F00A64F32 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
