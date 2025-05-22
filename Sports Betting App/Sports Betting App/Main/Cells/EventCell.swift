@@ -55,6 +55,14 @@ class EventCell: UITableViewCell {
         homeOddsButton.backgroundColor = .systemBlue.withAlphaComponent(0.1)
         drawOddsButton.backgroundColor = .systemGray.withAlphaComponent(0.1)
         awayOddsButton.backgroundColor = .systemRed.withAlphaComponent(0.1)
+        
+        // Hide draw button by default
+        drawOddsButton.isHidden = true
+        
+        // Clear buttons titles
+        homeOddsButton.setTitle("", for: .normal)
+        drawOddsButton.setTitle("", for: .normal)
+        awayOddsButton.setTitle("", for: .normal)
     }
     
     func configure(with event: Event) {
@@ -65,30 +73,79 @@ class EventCell: UITableViewCell {
         homeTeamLabel.text = event.homeTeam
         awayTeamLabel.text = event.awayTeam
         
-        // Find the best odds for each team
-        if let bestBookmaker = event.bookmakers.first {
-            if let h2hMarket = bestBookmaker.markets.first(where: { $0.key == "h2h" }) {
+        // Reset buttons to default state and hide them
+        homeOddsButton.setTitle("", for: .normal)
+        drawOddsButton.setTitle("", for: .normal)
+        awayOddsButton.setTitle("", for: .normal)
+        
+        // Hide all odds buttons initially
+        homeOddsButton.isHidden = true
+        drawOddsButton.isHidden = true
+        awayOddsButton.isHidden = true
+        
+        // Find a bookmaker with odds
+        var foundBookmaker = false
+        
+        for bookmaker in event.bookmakers {
+            if let h2hMarket = bookmaker.markets.first(where: { $0.key == "h2h" }) {
                 let outcomes = h2hMarket.outcomes
                 
-                let isSoccerMatch = event.sportKey.contains("soccer")
+                // Find outcomes for home, away, and draw
+                let homeOutcome = outcomes.first(where: { $0.name == event.homeTeam })
+                let awayOutcome = outcomes.first(where: { $0.name == event.awayTeam })
+                let drawOutcome = outcomes.first(where: { $0.name == "Draw" })
                 
-                if isSoccerMatch {
-                    // For soccer matches with home, away, and draw outcomes
-                    let homeOutcome = outcomes.first(where: { $0.name == event.homeTeam })
-                    let awayOutcome = outcomes.first(where: { $0.name == event.awayTeam })
-                    let drawOutcome = outcomes.first(where: { $0.name == "Draw" })
+                // Check if we have at least home and away odds
+                if homeOutcome != nil && awayOutcome != nil {
+                    // Set home and away odds
+                    homeOddsButton.setTitle(String(format: "%.2f", homeOutcome!.price), for: .normal)
+                    homeOddsButton.isHidden = false
                     
-                    homeOddsButton.setTitle(homeOutcome != nil ? String(format: "%.2f", homeOutcome!.price) : "N/A", for: .normal)
-                    awayOddsButton.setTitle(awayOutcome != nil ? String(format: "%.2f", awayOutcome!.price) : "N/A", for: .normal)
-                    drawOddsButton.setTitle(drawOutcome != nil ? String(format: "%.2f", drawOutcome!.price) : "N/A", for: .normal)
-                    drawOddsButton.isHidden = false
-                } else {
-                    // For non-soccer matches with just home and away outcomes
-                    if outcomes.count >= 2 {
-                        homeOddsButton.setTitle(String(format: "%.2f", outcomes[0].price), for: .normal)
-                        awayOddsButton.setTitle(String(format: "%.2f", outcomes[1].price), for: .normal)
+                    awayOddsButton.setTitle(String(format: "%.2f", awayOutcome!.price), for: .normal)
+                    awayOddsButton.isHidden = false
+                    
+                    // Set draw odds if available
+                    if let drawOutcome = drawOutcome {
+                        drawOddsButton.setTitle(String(format: "%.2f", drawOutcome.price), for: .normal)
+                        drawOddsButton.isHidden = false
                     }
-                    drawOddsButton.isHidden = true
+                    
+                    foundBookmaker = true
+                    break
+                }
+            }
+        }
+        
+        // If no bookmaker with both home and away odds, try to find any with partial odds
+        if !foundBookmaker && !event.bookmakers.isEmpty {
+            for bookmaker in event.bookmakers {
+                if let h2hMarket = bookmaker.markets.first(where: { $0.key == "h2h" }) {
+                    let outcomes = h2hMarket.outcomes
+                    var hasAnyOdds = false
+                    
+                    // Try to find any available odds
+                    if let homeOutcome = outcomes.first(where: { $0.name == event.homeTeam }) {
+                        homeOddsButton.setTitle(String(format: "%.2f", homeOutcome.price), for: .normal)
+                        homeOddsButton.isHidden = false
+                        hasAnyOdds = true
+                    }
+                    
+                    if let awayOutcome = outcomes.first(where: { $0.name == event.awayTeam }) {
+                        awayOddsButton.setTitle(String(format: "%.2f", awayOutcome.price), for: .normal)
+                        awayOddsButton.isHidden = false
+                        hasAnyOdds = true
+                    }
+                    
+                    if let drawOutcome = outcomes.first(where: { $0.name == "Draw" }) {
+                        drawOddsButton.setTitle(String(format: "%.2f", drawOutcome.price), for: .normal)
+                        drawOddsButton.isHidden = false
+                        hasAnyOdds = true
+                    }
+                    
+                    // If we found at least one odd, use this bookmaker
+                    if hasAnyOdds {
+                        break
+                    }
                 }
             }
         }
@@ -114,9 +171,22 @@ class EventCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        // Reset all labels and buttons
+        sportTitleLabel.text = nil
+        dateLabel.text = nil
+        homeTeamLabel.text = nil
+        awayTeamLabel.text = nil
+        
+        // Reset odds buttons
         homeOddsButton.setTitle("", for: .normal)
-        awayOddsButton.setTitle("", for: .normal)
         drawOddsButton.setTitle("", for: .normal)
+        awayOddsButton.setTitle("", for: .normal)
+        
+        // Hide draw button by default until configured
         drawOddsButton.isHidden = true
+        
+        // Clear event data
+        event = nil
     }
 }
+

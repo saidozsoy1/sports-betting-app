@@ -26,9 +26,28 @@ final class DataManager: DataManaging {
         serviceManager.fetchOddsForAllRegions { [weak self] result in
             DispatchQueue.main.async {
                 if case .success(let fetchedEvents) = result {
-                    self?.events = fetchedEvents
+                    // Filter out events that don't have valid odds
+                    let filteredEvents = fetchedEvents.filter { event in
+                        // Check if the event has at least one bookmaker with valid odds
+                        return event.bookmakers.contains { bookmaker in
+                            if let h2hMarket = bookmaker.markets.first(where: { $0.key == "h2h" }) {
+                                let outcomes = h2hMarket.outcomes
+                                
+                                // Check if outcomes contain at least home and away odds
+                                let hasHomeOdds = outcomes.contains { $0.name == event.homeTeam && $0.price > 0 }
+                                let hasAwayOdds = outcomes.contains { $0.name == event.awayTeam && $0.price > 0 }
+                                
+                                return hasHomeOdds && hasAwayOdds
+                            }
+                            return false
+                        }
+                    }
+                    
+                    self?.events = filteredEvents
+                    completion(.success(filteredEvents))
+                } else {
+                    completion(result)
                 }
-                completion(result)
             }
         }
     }

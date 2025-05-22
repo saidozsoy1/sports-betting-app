@@ -99,8 +99,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BetItemCell", for: indexPath) as! BetItemCell
             if let betItem = viewModel.getBetItemAt(index: indexPath.row) {
-                cell.configure(with: betItem)
-                cell.delegate = self
+                if !betItem.eventName.isEmpty && betItem.outcome.price > 0 {
+                    cell.configure(with: betItem)
+                    cell.delegate = self
+                }
             }
             return cell
         }
